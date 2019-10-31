@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,700,900&display=swap" rel="stylesheet">
     <title>Pokedex</title>
 </head>
+<body>
 <header>
     <img src="assests/display/Pokedex-ball.png"/>
     <h1>Pokedex</h1>
@@ -29,9 +30,12 @@
     </div>
 </main>
 <footer class="mobile">
+    <input id="search" type="text" placeholder="search">
+    <select id="filter">
+        <option value="flying">flying</option>
+        <option value="ground">ground</option>
+    </select>
 </footer>
-<body>
-    <div id="root"></div>
     <script type="module" src="./index.js"></script>
 </body>
 
