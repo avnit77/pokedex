@@ -2,6 +2,7 @@
 * body {
     color: white;
     margin: 0%;
+    background-color: rgb(202, 196, 196);
 }
 
 @font-face {
@@ -14,13 +15,15 @@ ul {
 }
 
 li {
-    border: black 1px solid;
+    border: black 10px solid;
     border-radius: 20%;
-    padding: 3vw
+    padding: 3vw;
+    background-color: rgba(255, 255, 255, 0.918);
 }
 div.picture {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     max-width: 300px;
     max-height: 220px
 }
@@ -63,9 +66,17 @@ h3 {
         margin-top: 2vw;
         margin-left: 3vw;
     }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     main {
         position: fixed;
         margin-top: 50vw;
+
     }
     footer {
         background-image: url("./assests/display/mobile-footer.png");
@@ -87,5 +98,56 @@ h3 {
         height: 40px;
         width: 70px
     }
+    .sidebar {
+        opacity: 0;
+    }
 
+}
+
+@media (min-width: 550px) {
+    .mobile {
+        opacity: 0;
+    }
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    li {
+        max-width: 300px;
+        max-height: 330px;
+    }
+    .card {
+        max-width: 50%
+    }
+    main {
+        position: fixed;
+        margin-top: 210px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .display{
+        height: 700px;
+        overflow: scroll;
+        width: 70%
+    }
+
+    header {
+        position: fixed;
+        background-image: url("./assests/display/mobile-header.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100vw;
+        height: 200px;
+    }
+    header
+    img {
+        max-height: 50%;
+        max-width: 50%;
+        margin-left: 2vw;
+        margin-top: 2vw;
+    }
 }
