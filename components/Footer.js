@@ -6,8 +6,8 @@ export class Footer extends Component {
         return /*html*/ `
         <footer class="mobile">
             <div id="search-bar">
-                <input id="search" type="text" placeholder="Search">
-                <button id="search-button"></button>
+                <input id="search2" type="text" placeholder="Search">
+                <button id="search-button2"></button>
             </div>
             <select id="filter">
                 <option value="flying">flying</option>
