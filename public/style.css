@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: "pokemon-solid";
-    src: url("./public/assests/font/pokemonsolid.ttf");
+    src: url("./assests/font/pokemonsolid.ttf");
 }
 
 ul {
@@ -53,7 +53,7 @@ header {
 @media (max-width: 550px) {
 
     header {
-        background-image: url("./public/assests/display/mobile-header.png");
+        background-image: url("./assests/display/mobile-header.png");
     }
     .name {
         max-width: 200px
@@ -85,7 +85,7 @@ header {
         width: 100%
     }
     footer {
-        background-image: url("./public/assests/display/mobile-footer.png");
+        background-image: url("./assests/display/mobile-footer.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
         position: fixed;
@@ -208,7 +208,7 @@ header {
         flex-direction: column;
     }
     header {
-        background-image: url("./public/assests/display/mobile-header.png");
+        background-image: url("./assests/display/mobile-header.png");
     }
     img.logo {
         max-height: 40%;
