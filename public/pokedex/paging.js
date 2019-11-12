@@ -1,6 +1,6 @@
 import Component from '../Component.js';
 
-export class Paging extends Component {
+class Paging extends Component {
 
     onRender(dom) {
         const prevButton = dom.querySelector('.prev');
@@ -41,16 +41,18 @@ export class Paging extends Component {
 
         prevButton.addEventListener('click', () => {
             updatePage(-1);
+            window.scrollTo(0, 0);
         });
 
         nextButton.addEventListener('click', () => {
             updatePage(1);
+            window.scrollTo(0, 0);
         });
     }
 
     renderHTML() {
-        const perPage = 10;
-        const totalResults = this.props.totalResults;
+        const perPage = 20;
+        const count = this.props.count;
         const queryString = window.location.hash.slice(1);
         const searchParams = new URLSearchParams(queryString);
 
@@ -63,13 +65,13 @@ export class Paging extends Component {
             page = parsedPage;
         }
 
-        if (!totalResults) {
+        if (!count) {
             return /*html*/`
                 <p class="paging">No results, try another search</p>
             `;
         }
 
-        const lastPage = Math.ceil(totalResults / perPage);
+        const lastPage = Math.ceil(count / perPage);
 
         return /*html*/`
             <p class="paging">
@@ -80,3 +82,5 @@ export class Paging extends Component {
         `;
     }
 }
+
+export default Paging;

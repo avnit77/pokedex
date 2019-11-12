@@ -1,20 +1,20 @@
 import Component from '../Component.js';
 
-export class PokemonCard extends Component {
+class PokemonCard extends Component {
     renderHTML() {
-        const pokemons = this.props.pokemons;
+        const pokemon = this.props.pokemon;
 
         return /*html*/`
             <li class="pokemon-item">
                 <div class="top">
-                    <p>${pokemons.attack}</p>
+                    <p>${pokemon.attack}</p>
                     <img class="card"
-                        src="${pokemons.url_image}"
+                        src="${pokemon.url_image}"
                     >
-                    <p>${pokemons.type_1}</p>
+                    <p>${pokemon.type_1}</p>
                 </div>
                 <div>
-                    <h2>${pokemons.pokemon}</h2>
+                    <h2>${pokemon.pokemon}</h2>
                 </div>
             </li>
         `;

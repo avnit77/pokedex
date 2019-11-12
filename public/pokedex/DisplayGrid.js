@@ -1,5 +1,5 @@
 import Component from '../Component.js';
-import { PokemonCard } from '../pokedex/pokemon.js';
+import PokemonCard from '../pokedex/pokemon.js';
 
 
 export class DisplayGrid extends Component {
@@ -11,7 +11,7 @@ export class DisplayGrid extends Component {
     }
 
     onRender(dom) {
-        const pokemons = this.props.pokemons.sort((a, b) => a.id - b.id);
+        const pokemons = this.props.pokemons;
 
         pokemons.forEach(pokemon => {
             const props = { pokemon : pokemon };

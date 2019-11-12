@@ -20,7 +20,7 @@ export class Search extends Component {
                 </label>
                 <label>
                     <input type="radio" name="type" value="grass">
-                    Flying
+                    Grass
                 </label>
                 <label>
                     <input type="radio" name="type" value="electric">
@@ -53,16 +53,16 @@ export class Search extends Component {
     }
 
     onRender(form) {
-        const searchBar = form.querySelector('input[id=search]');
+        // const searchBar = form.querySelector('input[id=search]');
         const filters = form.querySelectorAll('input[name=type]');
 
         function updateControls() {
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
 
-            searchBar.value = searchParams.get('s') || '';
+            // searchBar.value = searchParams.get('pokemon') || '';
 
-            const type = searchParams.get('type');
+            const type = searchParams.get('type_1');
             if (type) {
                 filters.forEach(filter => {
                     filter.checked = filter.value === type;
@@ -83,8 +83,9 @@ export class Search extends Component {
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
 
-            searchParams.set('type', formData.get('type'));
-            searchParams.set('s', formData.get('search'));
+            // searchParams.set('pokemon', formData.get('search'));
+            searchParams.set('type_1', formData.get('type'));
+
             searchParams.set('page', 1);
 
             window.location.hash = searchParams.toString();

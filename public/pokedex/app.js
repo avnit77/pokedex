@@ -1,6 +1,6 @@
 import Component from '../Component.js';
 import { Header } from './Header.js';
-import { Paging } from './paging.js';
+import Paging from './paging.js';
 import { DisplayGrid } from './DisplayGrid.js';
 import Sidebar from './Sidebar.js';
 import { Footer } from './Footer.js';
@@ -13,15 +13,15 @@ class PokeApp extends Component {
         const header = new Header();
         dom.appendChild(header.renderDOM());
 
-        const paging = new Paging();
-        dom.appendChild(paging.renderDOM());
-
         const optionsSection = dom.querySelector('.options');
         const sidebar = new Sidebar();
         optionsSection.prepend(sidebar.renderDOM());
 
         const search = new Search();
         optionsSection.prepend(search.renderDOM());
+
+        const paging = new Paging();
+        optionsSection.prepend(paging.renderDOM());
 
         const listSection = dom.querySelector('.display');
         const displayGrid = new DisplayGrid({ pokemons: [] });
@@ -32,10 +32,11 @@ class PokeApp extends Component {
 
         async function loadHeroPokemon() {
             const response = await getPokemon();
-            const pokemons = response.Search;
-            const totalResults = response.totalResults;
-            displayGrid.update({ pokemons: pokemons });
-            paging.update({ totalResults: totalResults });
+
+            const pokemons = response.results;
+            const count = response.count;
+            displayGrid.update({ pokemons });
+            paging.update({ count });
         }
 
         loadHeroPokemon();
