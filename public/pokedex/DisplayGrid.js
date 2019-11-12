@@ -11,7 +11,7 @@ export class DisplayGrid extends Component {
     }
 
     onRender(dom) {
-        const pokemons = this.props.pokemons;
+        const pokemons = this.props.pokemons.sort((a, b) => a.attack - b.attack);
 
         pokemons.forEach(pokemon => {
             const props = { pokemon : pokemon };
