@@ -1,4 +1,4 @@
-import HomeApp from './components/app.js';
+import HomeApp from './pokedex/app.js/index.js';
 
 const app = new HomeApp();
 const dom = app.renderDOM();

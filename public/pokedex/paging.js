@@ -1,4 +1,4 @@
-import Component from './Component.js';
+import Component from '../Component.js';
 
 export class Paging extends Component {
 
@@ -6,7 +6,6 @@ export class Paging extends Component {
         const prevButton = dom.querySelector('.prev');
         const nextButton = dom.querySelector('.next');
 
-        // Don't attach event listeners if no results
         if (!prevButton) {
             return;
         }
@@ -17,7 +16,6 @@ export class Paging extends Component {
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
 
-            // hmm, this code looks like same code in renderHTML...
             const parsedPage = parseInt(searchParams.get('page'));
             if (isNaN(parsedPage)) {
                 page = 1;
@@ -51,7 +49,7 @@ export class Paging extends Component {
     }
 
     renderHTML() {
-        const perPage = 10; // this API only does 10 per
+        const perPage = 10;
         const totalResults = this.props.totalResults;
         const queryString = window.location.hash.slice(1);
         const searchParams = new URLSearchParams(queryString);

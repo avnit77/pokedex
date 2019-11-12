@@ -1,4 +1,4 @@
-import Component from './Component.js';
+import Component from '../Component.js';
 import { Header } from './Header.js';
 import { Paging } from './paging.js';
 import { DisplayGrid } from './DisplayGrid.js';
@@ -7,9 +7,9 @@ import { Footer } from './Footer.js';
 import { Search } from './search.js';
 import { getPokemon } from '../Api/api.js';
 
-class HomeApp extends Component {
+class PokeApp extends Component {
 
-    async onRender(dom) {
+    onRender(dom) {
         const header = new Header();
         dom.appendChild(header.renderDOM());
 
@@ -64,4 +64,4 @@ class HomeApp extends Component {
     }
 }
 
-export default HomeApp;
+export default PokeApp;

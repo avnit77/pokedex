@@ -1,4 +1,4 @@
-import Component from './Component.js';
+import Component from '../Component.js';
 
 class Sidebar extends Component {
 
