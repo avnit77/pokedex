@@ -26,11 +26,11 @@
       }
     ],
     "quotes": [
-      "error", 
+      "error",
       "single",
-      { 
+      {
         "avoidEscape": true,
-        "allowTemplateLiterals": true 
+        "allowTemplateLiterals": true
       }
     ],
     "no-multi-spaces": [
